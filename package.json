@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jerismith32/challenge-9-Node.js-README-generator/issues"
   },
-  "homepage": "https://github.com/jerismith32/challenge-9-Node.js-README-generator#readme"
+  "homepage": "https://github.com/jerismith32/challenge-9-Node.js-README-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.0"
+  }
 }
