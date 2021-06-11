@@ -84,12 +84,19 @@ const questions = [
     {
         type: 'input',
         name: 'contributorCovenant',
-        message: "If you answered yes to the previous question, please feel free to include contributing guidelines."
+        message: "If you answered yes to the previous question, please feel free to include contributing guidelines.",
+        default: '[https://choosealicense.com/](https://choosealicense.com/)'
     },
     {
         type: 'input',
         name: 'tests',
         message: "Please include any tests and examples for your application."
+    },
+    {
+        type: 'confirm',
+        name: 'contents',
+        message: "Would you like your README.md to include a table of contents?",
+        //allow user to choose other (y/N)
     },
 
 ];
