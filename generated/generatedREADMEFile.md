@@ -1,7 +1,7 @@
-# lksjdf
+# Title of Project
 
   ## Description
-  lkjsdf
+  Short description of the project will be included here
 
   ## Table of Contents 
   * [Installation](#installation)
@@ -11,13 +11,13 @@
     
 
   ## Installation
-  npm install
+  any command the user needs to include
 
   ## Usage
-  lskdf
+  Instructions for use will be included here
 
   ## Credits
-  slkdjf
+  Collaborators
   
   ## License
   ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
@@ -29,8 +29,8 @@
 
 
   ## Tests
-  lksdf
+  Tests and Examples of the application
 
   ## Questions
-  GitHub: lksjdf
-  Email: lkjsdf
+  GitHub: jerismith32
+  Email: jerismith32@gmail.com

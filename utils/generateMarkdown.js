@@ -4,25 +4,25 @@ function renderLicenseBadge(license) {
   if (license === 'Apache') {
     return '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)'
   } else if (license === 'Boost') {
-    return '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)'
+    return '![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)'
   } else if (license === 'BSD') {
-    return '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
+    return '![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)'
   } else if (license === 'Eclipse') {
-    return '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
+    return '!License](https://img.shields.io/badge/License-EPL%201.0-red.svg)'
   } else if (license === 'IBM') {
-    return '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
+    return '![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)'
   } else if (license === 'ISC') {
-    return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'
+    return '![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)'
   } else if (license === 'MIT') {
-    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+    return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)'
   } else if (license === 'Mozilla') {
-    return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
+    return '![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)'
   } else if (license === 'SIL') {
-    return '[![License: Open Font-1.1](https://img.shields.io/badge/License-OFL%201.1-lightgreen.svg)](https://opensource.org/licenses/OFL-1.1)'
+    return '![License: Open Font-1.1](https://img.shields.io/badge/License-OFL%201.1-lightgreen.svg)'
   } else if (license === 'Unlicense') {
-    return '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
+    return '![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)'
   } else if (license === 'Zlib') {
-    return '[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)'
+    return '![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)'
   } else {
     return ''
   } 
@@ -75,6 +75,9 @@ function renderTableofContents(contents) {
   * [Usage](#usage)
   * [Credits](#credits)
   * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
     `
   }
   return '';
@@ -92,7 +95,7 @@ function renderContributing(contributing, contributorCovenant) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  console.log('data', data)
+  // console.log('data', data)
   return `# ${data.title}
 
   ## Description

@@ -43,6 +43,12 @@ const questions = [
         type: 'input',
         name: 'email',
         message: "What is your email address? (Required)",
+        validate: (input) => {
+            if (input === '') {
+                return "Please make sure you enter your email address here."
+            }
+            return true;
+        }
     },
     {
         type: 'input',
@@ -158,11 +164,11 @@ function init() {
                 {
                     type: 'input',
                     name: 'contributorCovenant',
-                    message: "If you answered yes to the previous question, please feel free to include contributing guidelines.",
+                    message: "Please include contributing guidelines here.",
                     default: '[Contributor Covenant](https://www.contributor-covenant.org/)'
                 },
             ]).then(value => {
-                console.log('value', value)
+                //console.log('value', value)
                 data.contributorCovenant = value.contributorCovenant
                 writeToFile(fileName, data);
             })
