@@ -8,14 +8,36 @@ const generateMarkdown = require('./utils/generateMarkdown');
 const questions = [
     {
         type: 'input',
+        name: 'name',
+        message: "What is your name? (Required)",
+        validate: (input) => {
+            if (input === '') {
+                return "Please make sure you enter your name here."
+            }
+            return true;
+        }
+    },
+    {
+        type: 'input',
         name: 'title',
-        message: "What is the title of your project? (Required)"
+        message: "What is the title of your project? (Required)",
+        validate: (input) => {
+            if (input === '') {
+                return "Please make sure you enter the title of your project."
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         name: 'github',
         message: "What is your GitHub username? (Required)",
-        //validation
+        validate: (input) => {
+            if (input === '') {
+                return "Please make sure you enter your GitHub username."
+            }
+            return true;
+        }
     },
     {
         type: 'input',
@@ -26,6 +48,12 @@ const questions = [
         type: 'input',
         name: 'description',
         message: "Please write a short description of your project. (Required)",
+        validate: (input) => {
+            if (input === '') {
+                return "Please write a short description of your project."
+            }
+            return true;
+        }
     },
     {
         type: 'list',
@@ -43,59 +71,46 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: "Please provide instructions and examples for use. Include screenshots if needed. (Required)",
+        message: "Please provide instructions and examples for use. (Required)",
+        validate: (input) => {
+            if (input === '') {
+                return "Please make sure you enter the instructions and examples for the use of your project."
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         name: 'credits',
-        message: "Please list your collaborators (including links to their Github profiles), any third-party assets used (list the creaters with links to their primary web presence), and any tutorials utilized (include the links here)."
-    },
-    {
-        type: 'confirm',
-        name: 'contributing',
-        message: "Did you create an application or package that you would like others to contribute to?",
-        //allow user to choose other (y/N)
-    },
-
-// inquirer
-//   .prompt([
-//     {
-//       name: "wants_pizza",
-//       type: "confirm",
-//       message: "Do you want a free pizza?",
-//     },
-//     {
-//       name: "confirm_answer",
-//       type: "confirm",
-//       message: "Are you sure?",
-//       when: (answers) => answers.wants_pizza === false,
-//     },
-//   ])
-//   .then((answers) => {
-//     if (answers.wants_pizza) {
-//       console.log("The user wants free pizza");
-//     } else if (answers.confirm_answer) {
-//       // the user definitely doesn't want pizza
-//     } else {
-//       // the user changed their mind
-//       // run the function to ask this question again
-//     } 
-//   });
-    {
-        type: 'input',
-        name: 'contributorCovenant',
-        message: "If you answered yes to the previous question, please feel free to include contributing guidelines.",
-        default: '[https://choosealicense.com/](https://choosealicense.com/)'
+        message: "Please list your collaborators (including links to their Github profiles), any third-party assets used (list the creaters with links to their primary web presence), and any tutorials utilized (include the links here).",
+        validate: (input) => {
+            if (input === '') {
+                return "Please make sure you enter any credits here."
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         name: 'tests',
-        message: "Please include any tests and examples for your application."
+        message: "Please include any tests and examples for your application.",
+        validate: (input) => {
+            if (input === '') {
+                return "Please make sure you enter any tests or examples for your application."
+            }
+            return true;
+        }
     },
     {
         type: 'confirm',
         name: 'contents',
         message: "Would you like your README.md to include a table of contents?",
+        //allow user to choose other (y/N)
+    },
+    {
+        type: 'confirm',
+        name: 'contributing',
+        message: "Did you create an application or package that you would like others to contribute to?",
         //allow user to choose other (y/N)
     },
 
@@ -126,7 +141,7 @@ function writeToFile(fileName, data) {
 //         .join('') + '.json';
 
 //     fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
-//       if (err) {
+//       if (err)
 //         return console.log(err);
 //       }
 
@@ -137,9 +152,24 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then(function(data) {
-        //console.log(data);
         let fileName = "generatedREADMEFile.md"
-        writeToFile(fileName, data);
+        if(data.contributing === true){
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'contributorCovenant',
+                    message: "If you answered yes to the previous question, please feel free to include contributing guidelines.",
+                    default: '[Contributor Covenant](https://www.contributor-covenant.org/)'
+                },
+            ]).then(value => {
+                console.log('value', value)
+                data.contributorCovenant = value.contributorCovenant
+                writeToFile(fileName, data);
+            })
+        }else{
+            writeToFile(fileName, data);
+        }
+       
     })
 };
 

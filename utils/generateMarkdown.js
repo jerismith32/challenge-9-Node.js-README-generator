@@ -32,32 +32,32 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license === 'Apache') {
-    return `[${data.license}](https://opensource.org/licenses/Apache-2.0)`
+    return `[${license}](https://opensource.org/licenses/Apache-2.0)`
   } else if (license === 'Boost') {
-    return `[${data.license}](https://www.boost.org/LICENSE_1_0.txt)`
+    return `[${license}](https://www.boost.org/LICENSE_1_0.txt)`
   } else if (license === 'BSD') {
-    return `[${data.license}](https://opensource.org/licenses/BSD-3-Clause)`
+    return `[${license}](https://opensource.org/licenses/BSD-3-Clause)`
   } else if (license === 'Eclipse') {
-    return `[${data.license}](https://opensource.org/licenses/EPL-1.0)`
+    return `[${license}](https://opensource.org/licenses/EPL-1.0)`
   } else if (license === 'IBM') {
-    return `[${data.license}](https://opensource.org/licenses/IPL-1.0)`
+    return `[${license}](https://opensource.org/licenses/IPL-1.0)`
   } else if (license === 'ISC') {
-    return `[${data.license}](https://opensource.org/licenses/ISC)`
+    return `[${license}](https://opensource.org/licenses/ISC)`
   } else if (license === 'MIT') {
-    return `[${data.license}](https://opensource.org/licenses/MIT)`
+    return `[${license}](https://opensource.org/licenses/MIT)`
   } else if (license === 'Mozilla') {
-    return `[${data.license}](https://opensource.org/licenses/MPL-2.0)`
+    return `[${license}](https://opensource.org/licenses/MPL-2.0)`
   } else if (license === 'SIL') {
-    return `[${data.license}](https://opensource.org/licenses/OFL-1.1)`
+    return `[${license}](https://opensource.org/licenses/OFL-1.1)`
   } else if (license === 'Unlicense') {
-    return `[${data.license}(http://unlicense.org/)`
+    return `[${license}](http://unlicense.org/)`
   } else if (license === 'Zlib') {
-    return `[${data.license}](https://opensource.org/licenses/Zlib)`
+    return `[${license}](https://opensource.org/licenses/Zlib)`
   } else {
     return ''
   } 
 }
-}
+
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -71,24 +71,28 @@ function renderLicenseSection(license) {
 function renderTableofContents(contents) {
   if (contents === true) {
     return `## Table of Contents 
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Credits](#credits)
-    * [License](#license)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
     `
   }
   return '';
 }
 
-function renderContributing(contributing) {
+function renderContributing(contributing, contributorCovenant) {
   if (contributing === true) {
-    return `## Contributing`
+    return `## Contributing
+  ${contributorCovenant}
+    `
   } else return `## Contributing
   This project is not open for contributions at this time.`;
 }
 
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  console.log('data', data)
   return `# ${data.title}
 
   ## Description
@@ -110,7 +114,7 @@ function generateMarkdown(data) {
   ${renderLicenseLink(data.license)}
   
 
-  ${renderContributing(data.contributing)}
+  ${renderContributing(data.contributing, data.contributorCovenant)}
 
 
   ## Tests
