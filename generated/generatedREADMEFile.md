@@ -1,7 +1,7 @@
-# Challenge-9-Node.js-README-Generator
+# SAMPLE README File for submission
 
   ## Description
-  The purpose of this project was to create a README File Generator primarily using Node.js
+  This is the sample README for the challenge 9 submission
 
   ## Table of Contents 
   * [Installation](#installation)
@@ -17,22 +17,23 @@
   npm install
 
   ## Usage
-  Needed for this project is inquirer
+  This is where the user will provide instructions for us
 
   ## Credits
-  The starter code for this project was required. Materials, readings, examples were utilized from classwork, TA help, and tutor sessions.
+  Collaborators will be listed here
   
-  
-  
-  
+  ## License
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  [MIT](https://opensource.org/licenses/MIT)
   
 
   ## Contributing
-  This project is not open for contributions at this time.
+  [Contributor Covenant](https://www.contributor-covenant.org/)
+    
 
 
   ## Tests
-  Tests and examples for this project have been submitted including a video walk through.
+  Tests and Examples
 
   ## Questions
   GitHub: jerismith32
