@@ -1,3 +1,32 @@
-# challenge-9-Node.js-README-generator
+# Challenge-9-Node.js-README-Generator
 
-https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+  ## Description
+  The purpose of this project was to create a README File Generator primarily using Node.js
+
+  ## Table of Contents 
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+
+  ## Installation
+  npm install
+
+  ## Usage
+  Needed for this project is inquirer
+
+  ## Credits
+  The starter code for this project was required. Materials, readings, examples were utilized from classwork, TA help, and tutor sessions.
+
+  ## Contributing
+  This project is not open for contributions at this time.
+
+
+  ## Tests
+  Tests and examples for this project have been submitted including a video walk through.
+
+  ## Questions
+  GitHub: jerismith32
+  Email: jerismith32@gmail.com

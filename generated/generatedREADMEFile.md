@@ -1,27 +1,30 @@
-# Title of Project
+# Challenge-9-Node.js-README-Generator
 
   ## Description
-  Short description of the project will be included here
+  The purpose of this project was to create a README File Generator primarily using Node.js
 
   ## Table of Contents 
   * [Installation](#installation)
   * [Usage](#usage)
   * [Credits](#credits)
   * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
     
 
   ## Installation
-  any command the user needs to include
+  npm install
 
   ## Usage
-  Instructions for use will be included here
+  Needed for this project is inquirer
 
   ## Credits
-  Collaborators
+  The starter code for this project was required. Materials, readings, examples were utilized from classwork, TA help, and tutor sessions.
   
-  ## License
-  ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
-  [Apache](https://opensource.org/licenses/Apache-2.0)
+  
+  
+  
   
 
   ## Contributing
@@ -29,7 +32,7 @@
 
 
   ## Tests
-  Tests and Examples of the application
+  Tests and examples for this project have been submitted including a video walk through.
 
   ## Questions
   GitHub: jerismith32
